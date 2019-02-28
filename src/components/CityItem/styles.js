@@ -3,30 +3,25 @@ import { colors, metrics } from '~/styles';
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: metrics.basePadding,
-    marginHorizontal: metrics.basePadding,
-    flexDirection: 'row',
     alignItems: 'center',
+    borderBottomColor: colors.lighter,
+    borderBottomWidth: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginHorizontal: metrics.basePadding,
+    paddingBottom: 5,
   },
 
-  info: {
-    flex: 1,
-  },
-
-  title: {
-    fontSize: 15,
-    color: colors.white,
+  temperature: {
+    color: colors.black,
+    fontSize: 26,
     fontWeight: 'bold',
   },
 
-  country: {
-    fontSize: 14,
-    color: colors.dark,
-    marginTop: 3,
-  },
-
-  loading: {
-    marginRight: 2,
+  title: {
+    color: colors.black,
+    fontSize: 15,
+    fontWeight: 'bold',
   },
 });
 

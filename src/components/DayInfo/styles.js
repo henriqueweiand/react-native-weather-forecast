@@ -19,8 +19,7 @@ const styles = StyleSheet.create({
 
   time: {
     color: colors.black,
-    fontSize: 18,
-    paddingVertical: 5,
+    fontSize: 16,
   },
 });
 

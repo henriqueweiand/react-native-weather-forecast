@@ -6,8 +6,8 @@ import Search from '~/pages/Search';
 
 const Routes = createStackNavigator(
   {
-    Search: { screen: Search },
     Main: { screen: Main },
+    Search: { screen: Search },
   },
   {
     navigationOptions: {

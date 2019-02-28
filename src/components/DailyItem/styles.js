@@ -5,8 +5,9 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'column',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'space-around',
     padding: 15,
+    height: 120,
   },
 
   time: {

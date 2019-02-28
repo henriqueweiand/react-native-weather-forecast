@@ -1,28 +1,24 @@
-import { StyleSheet } from 'react-native';
+import styled from 'styled-components/native';
 import { colors } from '~/styles';
 
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'space-around',
-    padding: 15,
-    height: 120,
-  },
+export const Container = styled.View`
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 15px;
+  height: 120;
+`;
 
-  time: {
-    fontSize: 15,
-    color: colors.black,
-    fontWeight: 'bold',
-    textAlign: 'center',
-  },
+export const Time = styled.Text`
+  font-size: 15;
+  color: ${colors.black};
+  font-weight: bold;
+  text-align: center;
+`;
 
-  temperature: {
-    fontSize: 15,
-    color: colors.black,
-    fontWeight: 'bold',
-    textAlign: 'center',
-  },
-});
-
-export default styles;
+export const Temperature = styled.Text`
+  font-size: 15;
+  color: ${colors.black};
+  font-weight: bold;
+  text-align: center;
+`;

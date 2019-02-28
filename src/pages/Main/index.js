@@ -1,5 +1,5 @@
-import React, { Component, Fragment } from 'react';
-import { ActivityIndicator, SafeAreaView, StatusBar } from 'react-native';
+import React, { Component } from 'react';
+import { View, ActivityIndicator, StatusBar } from 'react-native';
 import PropTypes from 'prop-types';
 
 import { bindActionCreators } from 'redux';
@@ -9,14 +9,19 @@ import { Creators as weekForecastActions } from '~/store/ducks/weekForecast';
 import WeekForecast from '~/components/WeekForecast';
 import DailyForecast from '~/components/DailyForecast';
 import DayInfo from '~/components/DayInfo';
-import ExtraInfo from '~/components/ExtraInfo';
 
-import styles from './styles';
+import Feather from 'react-native-vector-icons/Feather';
+import { SafeAreaView, HeaderRight } from './styles';
 
 class Main extends Component {
-  static navigationOptions = {
-    header: null,
-  };
+  static navigationOptions = ({ navigation }) => ({
+    title: 'Previsão',
+    headerRight: (
+      <HeaderRight onPress={() => navigation.navigate('Search')}>
+        <Feather name="refresh-ccw" size={18} color="#000" />
+      </HeaderRight>
+    ),
+  });
 
   static propTypes = {
     weekForecastRequest: PropTypes.func.isRequired,
@@ -45,18 +50,17 @@ class Main extends Component {
     const city = { name: 'Brusque' };
 
     return (
-      <SafeAreaView style={styles.container}>
+      <SafeAreaView loading={loading}>
         <StatusBar barStyle="dark-content" />
 
         {loading && city ? (
           <ActivityIndicator size="small" color="#000" />
         ) : (
-          <Fragment>
+          <View>
             <DayInfo navigation={navigation} data={{ ...current, city }} />
             <DailyForecast data={current.weekForecast} />
             <WeekForecast data={Object.values(data)} />
-            {/* <ExtraInfo data={current} /> */}
-          </Fragment>
+          </View>
         ) }
       </SafeAreaView>
     );

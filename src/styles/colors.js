@@ -6,6 +6,7 @@ export default {
   dark: '#666',
   darker: '#333',
   black: '#000',
+  blue: '#a7cbfd',
 
   primary: '#111',
   secundary: '#222',

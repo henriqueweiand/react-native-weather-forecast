@@ -1,18 +1,17 @@
 import React from 'react';
+import { View } from 'react-native';
 import PropTypes from 'prop-types';
 import Flag from 'react-native-flags';
 
-import { View, Text, TouchableOpacity } from 'react-native';
-
-import styles from './styles';
+import { TouchableOpacity, Temperature, Title } from './styles';
 
 const CityItem = ({ data, onPress }) => (
-  <TouchableOpacity onPress={onPress} style={styles.container}>
+  <TouchableOpacity onPress={onPress}>
     <View>
       <Flag code={data.sys.country.toUpperCase()} size={32} />
-      <Text style={styles.title}>{data.name}</Text>
+      <Title>{data.name}</Title>
     </View>
-    <Text style={styles.temperature}>{`${parseInt(data.main.temp, 10)}°`}</Text>
+    <Temperature>{`${parseInt(data.main.temp, 10)}°`}</Temperature>
   </TouchableOpacity>
 );
 

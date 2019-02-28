@@ -1,23 +1,22 @@
 import React from 'react';
-import { View, Text } from 'react-native';
 
 import PropTypes from 'prop-types';
 import Feather from 'react-native-vector-icons/Feather';
 import moment from 'moment';
 
 import { icons } from '~/config/utils';
-import styles from './styles';
+import { Container, Time, Temperature } from './styles';
 
 const DayItem = ({ data }) => (
-  <View style={styles.container}>
-    <Text style={styles.time}>{moment(data.dt_txt).format('HH')}</Text>
+  <Container>
+    <Time>{moment(data.dt_txt).format('HH')}</Time>
     <Feather
       name={icons[parseInt(data.weather[0].icon.substr(0, 2), 10)].icon}
       size={30}
       color="#000"
     />
-    <Text style={styles.temperature}>{`${parseInt(data.main.temp_max, 10)}°`}</Text>
-  </View>
+    <Temperature>{`${parseInt(data.main.temp_max, 10)}°`}</Temperature>
+  </Container>
 );
 
 DayItem.propTypes = {

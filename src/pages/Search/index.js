@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import {
-  View, Text, TextInput, ActivityIndicator, SafeAreaView, StatusBar,
-} from 'react-native';
+import { StatusBar } from 'react-native';
 import PropTypes from 'prop-types';
 
 import { debounce } from 'lodash';
@@ -12,7 +10,9 @@ import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import { Creators as SearchActions } from '~/store/ducks/search';
 import CityList from '~/components/CityList';
 
-import styles from './styles';
+import {
+  Form, SafeAreaView, SearchInput, TextLabel, LabelHelp, Loading,
+} from './styles';
 
 class Search extends Component {
   static navigationOptions = {
@@ -49,11 +49,10 @@ class Search extends Component {
     const { searchInput } = this.state;
 
     return (
-      <SafeAreaView style={styles.container}>
+      <SafeAreaView>
         <StatusBar barStyle="dark-content" />
-        <View style={styles.form}>
-          <TextInput
-            style={styles.searchInput}
+        <Form>
+          <SearchInput
             autoCorrect={false}
             autoFocus
             autoCapitalize="none"
@@ -63,17 +62,15 @@ class Search extends Component {
             value={searchInput}
             onChangeText={this.search}
           />
-        </View>
+        </Form>
 
-        <View style={styles.labelHelp}>
+        <LabelHelp>
           <EvilIcons name="location" size={30} color="#000" />
-          <Text style={styles.textLabel}>
-            Informe o nome completo da cidade que deseja encontrar.
-          </Text>
-        </View>
+          <TextLabel>Informe o nome completo da cidade que deseja encontrar.</TextLabel>
+        </LabelHelp>
 
         { loading
-          && <ActivityIndicator size="small" color="#999" style={styles.loading} /> }
+          && <Loading size="small" color="#999" /> }
 
         <CityList data={data} navigation={navigation} />
       </SafeAreaView>

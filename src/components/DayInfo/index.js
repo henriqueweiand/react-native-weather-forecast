@@ -1,5 +1,4 @@
 import React from 'react';
-import { Text, TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
 
 import { StackActions, NavigationActions } from 'react-navigation';
@@ -7,7 +6,7 @@ import moment from 'moment';
 import 'moment/locale/pt-br';
 
 import { daysOfWeek, icons } from '~/config/utils';
-import styles from './styles';
+import { TouchableOpacity, City, Temperature, Time, Day } from './styles';
 
 const DayInfo = ({ data, navigation }) => (
   <TouchableOpacity
@@ -18,16 +17,15 @@ const DayInfo = ({ data, navigation }) => (
       });
       navigation.dispatch(resetAction);
     }}
-    style={styles.container}
   >
-    <Text style={styles.temperature}>{`${parseInt(data.main.temp, 10)}°`}</Text>
-    <Text style={styles.time}>{icons[parseInt(data.weather[0].icon.substr(0, 2), 10)].label}</Text>
-    <Text style={styles.city}>{data.city.name}</Text>
-    <Text style={styles.day}>
+    <Temperature>{`${parseInt(data.main.temp, 10)}°`}</Temperature>
+    <Time>{icons[parseInt(data.weather[0].icon.substr(0, 2), 10)].label}</Time>
+    <City>{data.city.name}</City>
+    <Day>
       {`${daysOfWeek[moment(moment(data.dt_txt).format('YYYY-MM-DD')).weekday()]} / ${moment(
         data.dt_txt,
       ).format('MMMM, DD')}`}
-    </Text>
+    </Day>
   </TouchableOpacity>
 );
 

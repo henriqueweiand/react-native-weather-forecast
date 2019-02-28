@@ -1,26 +1,27 @@
-import { StyleSheet } from 'react-native';
+import styled from 'styled-components/native';
 import { colors } from '~/styles';
 
-const styles = StyleSheet.create({
-  city: {
-    color: colors.black,
-    fontSize: 22,
-  },
+export const TouchableOpacity = styled.TouchableOpacity`
+  align-items: center;
+  flex-direction: column;
+`;
 
-  container: {
-    alignItems: 'center',
-    flexDirection: 'column',
-  },
+export const City = styled.Text`
+  color: ${colors.black};
+  font-size: 22;
+`;
 
-  temperature: {
-    color: colors.black,
-    fontSize: 62,
-  },
+export const Temperature = styled.Text`
+  color: ${colors.black};
+  font-size: 62;
+`;
 
-  time: {
-    color: colors.black,
-    fontSize: 16,
-  },
-});
+export const Time = styled.Text`
+  color: ${colors.black};
+  font-size: 16;
+`;
 
-export default styles;
+export const Day = styled.Text`
+  color: ${colors.black};
+  font-size: 16;
+`;

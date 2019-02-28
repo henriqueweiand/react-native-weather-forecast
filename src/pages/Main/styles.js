@@ -1,9 +1,17 @@
-import { StyleSheet } from 'react-native';
+import styled, { css } from 'styled-components/native';
+import { metrics } from '~/styles';
 
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: 'column',
-  },
-});
+export const SafeAreaView = styled.SafeAreaView`
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-end;
 
-export default styles;
+  ${props => css`
+    ${props.loading && 'justify-content: center;'}
+  `}
+`;
+
+export const HeaderRight = styled.TouchableOpacity`
+  margin-right: ${metrics.basePadding};
+`;

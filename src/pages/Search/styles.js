@@ -1,42 +1,38 @@
-import { StyleSheet } from 'react-native';
 import { colors, metrics } from '~/styles';
+import styled from 'styled-components/native';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
+export const Form = styled.View`
+  margin-top: ${metrics.basePadding};
+  margin-horizontal: ${metrics.basePadding};
+  padding-bottom: ${metrics.basePadding};
+`;
 
-  form: {
-    marginTop: metrics.basePadding,
-    marginHorizontal: metrics.basePadding,
-    paddingBottom: metrics.basePadding,
-  },
+export const SafeAreaView = styled.SafeAreaView`
+  flex: 1;
+`;
 
-  searchInput: {
-    backgroundColor: colors.secundary,
-    borderRadius: metrics.baseRadius,
-    paddingHorizontal: metrics.basePadding,
-    height: 42,
-    color: colors.white,
-  },
+export const SearchInput = styled.TextInput`
+  background-color: ${colors.secundary};
+  border-radius: ${metrics.baseRadius};
+  padding-horizontal: ${metrics.basePadding};
+  height: 42;
+  color: ${colors.white};
+`;
 
-  loading: {
-    marginTop: metrics.basePadding,
-  },
+export const TextLabel = styled.Text`
+  flex: 1;
+`;
 
-  labelHelp: {
-    alignItems: 'center',
-    backgroundColor: colors.light,
-    borderRadius: metrics.baseRadius,
-    flexDirection: 'row',
-    marginBottom: metrics.baseMargin,
-    marginHorizontal: metrics.basePadding,
-    padding: 5,
-  },
+export const LabelHelp = styled.View`
+  align-items: center;
+  background-color: ${colors.lighter};
+  border-radius: ${metrics.baseRadius};
+  flex-direction: row;
+  margin-bottom: ${metrics.baseMargin};
+  margin-horizontal: ${metrics.basePadding};
+  padding: 5px;
+`;
 
-  textLabel: {
-    flex: 1,
-  },
-});
-
-export default styles;
+export const Loading = styled.ActivityIndicator`
+  margin-top: ${metrics.basePadding};
+`;

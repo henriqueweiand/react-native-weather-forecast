@@ -6,8 +6,8 @@ import Main from '~/pages/Main';
 
 const Routes = createStackNavigator(
   {
-    Main: { screen: Main },
     Search: { screen: Search },
+    Main: { screen: Main },
   },
   {
     defaultNavigationOptions: {

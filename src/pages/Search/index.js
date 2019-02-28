@@ -57,7 +57,7 @@ class Search extends Component {
             autoFocus
             autoCapitalize="none"
             placeholder="Busque pela cidade"
-            placeholderTextColor="#666"
+            placeholderTextColor="#fff"
             underlineColorAndroid="transparent"
             value={searchInput}
             onChangeText={this.search}

@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components/native';
-import { metrics } from '~/styles';
 
 export const SafeAreaView = styled.SafeAreaView`
   display: flex;
@@ -10,8 +9,4 @@ export const SafeAreaView = styled.SafeAreaView`
   ${props => css`
     ${props.loading && 'justify-content: center;'}
   `}
-`;
-
-export const HeaderRight = styled.TouchableOpacity`
-  margin-right: ${metrics.basePadding};
 `;

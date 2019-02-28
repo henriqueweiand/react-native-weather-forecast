@@ -10,18 +10,12 @@ import WeekForecast from '~/components/WeekForecast';
 import DailyForecast from '~/components/DailyForecast';
 import DayInfo from '~/components/DayInfo';
 
-import Feather from 'react-native-vector-icons/Feather';
-import { SafeAreaView, HeaderRight } from './styles';
+import { SafeAreaView } from './styles';
 
 class Main extends Component {
-  static navigationOptions = ({ navigation }) => ({
+  static navigationOptions = {
     title: 'Previsão',
-    headerRight: (
-      <HeaderRight onPress={() => navigation.navigate('Search')}>
-        <Feather name="refresh-ccw" size={18} color="#000" />
-      </HeaderRight>
-    ),
-  });
+  };
 
   static propTypes = {
     weekForecastRequest: PropTypes.func.isRequired,
@@ -38,16 +32,13 @@ class Main extends Component {
   };
 
   componentDidMount() {
-    const { weekForecastRequest } = this.props;
-    // const { city } = this.props.navigation.state.params;
-    // weekForecastRequest(city.id);
-    weekForecastRequest(3468879);
+    const { weekForecastRequest, navigation: { state: { params: { city } } } } = this.props;
+    weekForecastRequest(city.id);
   }
 
   render() {
     const { navigation, weekForecast: { data, loading, current } } = this.props;
-    // const { city } = this.props.navigation.state.params;
-    const city = { name: 'Brusque' };
+    const { state: { params: { city } } } = navigation;
 
     return (
       <SafeAreaView loading={loading}>

@@ -26,7 +26,7 @@ Observações:
 ### Execução
 
 1. Dentro da pasta do projeto rodar o comando `yarn`;
-2. Ainda dentro da pasta, use `react-native run-ios` (caso utilize mac) ou `react-native run-android` (Windowns/Mac) para realização de ambos é necessário possuir previamente as configurações de emulação seja no XCode ou GenyMontion/Android Studio. Pode ser utilizado com algun celular com Android (DevTools e depuração USB habilitadas);
+2. Ainda dentro da pasta, use `react-native run-ios` (caso utilize mac) ou `react-native run-android` (Windowns/Mac) para realização de ambos é necessário possuir previamente as configurações de emulação seja no XCode ou GenyMontion/Android Studio. Pode ser utilizado com algum celular com Android (DevTools e depuração USB habilitadas);
 
 **Resultado**
 
